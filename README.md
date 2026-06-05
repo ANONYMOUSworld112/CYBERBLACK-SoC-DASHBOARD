@@ -4,12 +4,11 @@
 > Real-time detection. Network visibility. Open-source intelligence. Threat tools. All in a strict black-and-white operational aesthetic.
 
 ```
-██████╗██╗   ██╗██████╗ ███████╗██████╗ ██████╗ ██╗      █████╗  ██████╗██╗  ██╗
-██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔══██╗██║     ██╔══██╗██╔════╝██║ ██╔╝
-██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝██████╔╝██║     ███████║██║     █████╔╝
-██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗██╔══██╗██║     ██╔══██║██║     ██╔═██╗
-╚██████╗   ██║   ██████╔╝███████╗██║  ██║██████╔╝███████╗██║  ██║╚██████╗██║  ██╗
- ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝
+   ▓▓▓▓▓ ▓▓▓▓▓ ▓▓▓▓▓ ▓▓▓▓▓ ▓▓    ▓▓ ▓▓▓▓▓  ▓▓  ▓▓ ▓▓▓▓▓ ▓▓
+   ▓▓    ▓▓    ▓▓     ▓▓   ▓▓  ▓▓ ▓▓  ▓▓ ▓▓ ▓▓  ▓▓    ▓▓
+   ▓▓▓▓  ▓▓▓▓  ▓▓▓▓   ▓▓   ▓▓▓▓▓▓ ▓▓▓▓▓  ▓▓▓▓▓   ▓▓▓▓  ▓▓
+   ▓▓    ▓▓    ▓▓     ▓▓   ▓▓  ▓▓ ▓▓ ▓▓  ▓▓  ▓▓  ▓▓
+   ▓▓    ▓▓▓▓▓ ▓▓▓▓▓ ▓▓▓▓▓ ▓▓  ▓▓ ▓▓  ▓▓ ▓▓  ▓▓ ▓▓▓▓▓ ▓▓
                                               DASHBOARD v2.0
 ```
 
@@ -84,75 +83,6 @@ It is opinionated. It is monochrome on purpose. It works.
 - Helmet CSP, CORS allow-list, no chromatic CSS
 
 ---
-## Quickstart
-
-```bash
-# 1. install dependencies (root + client)
-npm run install:all
-
-# 2. bootstrap the database, .env, and admin user
-npm run setup
-```
-
-Expected setup output:
-```
-[01] .env created with freshly generated JWT_SECRET
-[02] data/ ready at D:\SoC-dashboard v2\data
-[03] schema migrated (users, sessions, alerts, incidents, scans, osint_cache, settings, audit_log, packets)
-[04] admin user created — username: admin / password: ChangeMe!2026
-[05] setup complete — run `npm run dev` to start
-```
-
-```bash
-# 3. start the stack (server :4000, client :5173)
-npm run dev
-```
-
-Then open **http://localhost:5173** and log in with:
-
-```
-username: admin
-password: ChangeMe!2026
-run this in other terminal for 2FA : node scripts/get-totp.js 
-```
-
-You'll be routed through TOTP 2FA enrollment on first login. See [`docs/QUICKSTART.md`](docs/QUICKSTART.md) for the full walkthrough and troubleshooting matrix.
-
----
-
-## Configuration
-
-All runtime configuration lives in `.env` (auto-created by `setup.js`):
-
-| Variable | Default | Purpose |
-|---|---|---|
-| `JWT_SECRET` | random 64-byte base64url | HS256 signing key — **never commit** |
-| `JWT_TTL` | `12h` | Token lifetime |
-| `PORT` | `4000` | Express + Socket.IO port |
-| `CLIENT_URL` | `http://localhost:5173` | CORS allow-list entry |
-| `NODE_ENV` | `development` | Toggles production middleware |
-| `ADMIN_USERNAME` | `admin` | Seeded admin user |
-| `ADMIN_EMAIL` | `admin@local.soc` | Seeded admin email |
-| `ADMIN_PASSWORD` | `ChangeMe!2026` | **Change before deployment** |
-| `VT_API_KEY` | _(unset)_ | Enables VirusTotal lookups |
-| `SHODAN_API_KEY` | _(unset)_ | Enables Shodan OSINT tab |
-| `LOG_LEVEL` | `info` | Winston level: `error` / `warn` / `info` / `debug` |
-
----
-
-## Scripts
-
-| Command | Purpose |
-|---|---|
-| `npm run install:all` | Install root + client dependencies |
-| `npm run setup` | One-time DB + admin + JWT-secret bootstrap |
-| `npm run dev` | Server + client with hot reload (custom runner, no `concurrently`) |
-| `npm run server` | Server only (`node --watch`) |
-| `npm run client` | Client only (`vite`) |
-| `npm run build` | Production client bundle (`client/dist`) |
-| `npm start` | Production server (serves the built client statically) |
-
----
 
 ## Visual tour
 
@@ -175,34 +105,6 @@ All runtime configuration lives in `.env` (auto-created by `setup.js`):
 |---|---|---|
 | **Login** — neural-network canvas background, TOTP-aware | **Dashboard** — risk gauge, KPIs, live feed | **Alerts** — severity pills, incident board |
 | **Network** — geo map + top talkers + protocol donut | **OSINT** — search bar + drawer with DNS/Whois | **Settings** — TOTP reset, password change, audit log |
-
----
-
-## Screenshots
-
-1. execute
-
-![execute](docs/execute.png)
-
-2. login-page
-
-![login-page](docs/login-page.png)
-
-3. 2FA-page
-
-![2FA-page](docs/2FA-page.png)
-
-4. 2FA-OTP
-
-![2FA-OTP](docs/2FA-OTP.png)
-
-5. dashboard
-
-![dashboard](docs/dashboard.png)
-
-6. network
-
-![network](docs/network.png)
 
 ---
 
@@ -280,6 +182,74 @@ Full breakdown in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
 ---
 
+## Quickstart
+
+```bash
+# 1. install dependencies (root + client)
+npm run install:all
+
+# 2. bootstrap the database, .env, and admin user
+npm run setup
+```
+
+Expected setup output:
+```
+[01] .env created with freshly generated JWT_SECRET
+[02] data/ ready at D:\SoC-dashboard v2\data
+[03] schema migrated (users, sessions, alerts, incidents, scans, osint_cache, settings, audit_log, packets)
+[04] admin user created — username: admin / password: ChangeMe!2026
+[05] setup complete — run `npm run dev` to start
+```
+
+```bash
+# 3. start the stack (server :4000, client :5173)
+npm run dev
+```
+
+Then open **http://localhost:5173** and log in with:
+
+```
+username: admin
+password: ChangeMe!2026
+```
+
+You'll be routed through TOTP 2FA enrollment on first login. See [`docs/QUICKSTART.md`](docs/QUICKSTART.md) for the full walkthrough and troubleshooting matrix.
+
+---
+
+## Configuration
+
+All runtime configuration lives in `.env` (auto-created by `setup.js`):
+
+| Variable | Default | Purpose |
+|---|---|---|
+| `JWT_SECRET` | random 64-byte base64url | HS256 signing key — **never commit** |
+| `JWT_TTL` | `12h` | Token lifetime |
+| `PORT` | `4000` | Express + Socket.IO port |
+| `CLIENT_URL` | `http://localhost:5173` | CORS allow-list entry |
+| `NODE_ENV` | `development` | Toggles production middleware |
+| `ADMIN_USERNAME` | `admin` | Seeded admin user |
+| `ADMIN_EMAIL` | `admin@local.soc` | Seeded admin email |
+| `ADMIN_PASSWORD` | `ChangeMe!2026` | **Change before deployment** |
+| `VT_API_KEY` | _(unset)_ | Enables VirusTotal lookups |
+| `SHODAN_API_KEY` | _(unset)_ | Enables Shodan OSINT tab |
+| `LOG_LEVEL` | `info` | Winston level: `error` / `warn` / `info` / `debug` |
+
+---
+
+## Scripts
+
+| Command | Purpose |
+|---|---|
+| `npm run install:all` | Install root + client dependencies |
+| `npm run setup` | One-time DB + admin + JWT-secret bootstrap |
+| `npm run dev` | Server + client with hot reload (custom runner, no `concurrently`) |
+| `npm run server` | Server only (`node --watch`) |
+| `npm run client` | Client only (`vite`) |
+| `npm run build` | Production client bundle (`client/dist`) |
+| `npm start` | Production server (serves the built client statically) |
+
+---
 
 ## Project structure
 

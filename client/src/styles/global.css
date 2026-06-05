@@ -1,0 +1,163 @@
+/* ============================================================
+   SOC DASHBOARD v2 — GLOBAL STYLES
+   Strict 12-neutral palette. No chromatic accents anywhere.
+   Severity is conveyed via border weight/shade + glyph only.
+   ============================================================ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design tokens ────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --void-black:     #000000;
+  --bg-primary:     #0a0a0a;
+  --bg-secondary:   #111111;
+  --bg-card:        #141414;
+  --bg-hover:       #1a1a1a;
+  --bg-input:       #0d0d0d;
+
+  /* Borders */
+  --border-primary: #2a2a2a;
+  --border-bright:  #404040;
+  --border-white:   #ffffff;
+
+  /* Text */
+  --text-primary:   #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-dim:       #505050;
+  --text-label:     #707070;
+
+  /* Accents — white only, no colors */
+  --accent-primary: #ffffff;
+  --accent-dim:     #606060;
+  --accent-muted:   #303030;
+
+  /* Terminal */
+  --terminal-bg:    #000000;
+  --terminal-text:  #ffffff;
+  --terminal-dim:   #606060;
+  --terminal-cursor:#ffffff;
+
+  /* Severity (B&W only) */
+  --sev-critical-shade: #ffffff;  /* brightest */
+  --sev-high-shade:     #a0a0a0;
+  --sev-medium-shade:   #606060;
+  --sev-low-shade:      #404040;
+}
+
+/* ─── Base resets ──────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--void-black);
+  color: var(--text-primary);
+  font-family: 'Rajdhani', system-ui, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+button, input, select, textarea { font: inherit; color: inherit; background: transparent; border: 0; }
+a { color: inherit; text-decoration: none; }
+
+/* ─── Selection ────────────────────────────────────────── */
+::selection { background: #ffffff; color: #000000; }
+
+/* ─── Scrollbars (sharp 2px, neutral) ──────────────────── */
+*::-webkit-scrollbar { width: 2px; height: 2px; }
+*::-webkit-scrollbar-track { background: #111111; }
+*::-webkit-scrollbar-thumb { background: #333333; }
+*::-webkit-scrollbar-thumb:hover { background: #606060; }
+* { scrollbar-width: thin; scrollbar-color: #333333 #111111; }
+
+/* ─── Font helpers ─────────────────────────────────────── */
+.font-display { font-family: 'Orbitron', system-ui, sans-serif; letter-spacing: 0.15em; text-transform: uppercase; }
+.font-mono    { font-family: 'JetBrains Mono', Menlo, Consolas, monospace; }
+.font-ui      { font-family: 'Rajdhani', system-ui, sans-serif; }
+
+/* ─── Subtle global flicker for terminal feel ──────────── */
+.flicker { animation: flicker 4s steps(60) infinite; }
+
+/* ─── Scanline overlay utility ─────────────────────────── */
+.scanline-overlay {
+  position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 49.5%,
+    rgba(255, 255, 255, 0.03) 50%,
+    transparent 50.5%,
+    transparent 100%
+  );
+  background-size: 100% 4px;
+  mix-blend-mode: screen;
+}
+
+/* ─── Classification stripe (top edge of every shell) ── */
+.classification-stripe {
+  height: 2px; width: 100%;
+  background: linear-gradient(
+    90deg,
+    #000000 0%, #2a2a2a 10%, #ffffff 50%, #2a2a2a 90%, #000000 100%
+  );
+}
+
+/* ─── Severity helpers (border shades only) ────────────── */
+.sev-border-critical { border-left: 3px solid #ffffff; }
+.sev-border-high     { border-left: 3px solid #a0a0a0; }
+.sev-border-medium   { border-left: 3px solid #606060; }
+.sev-border-low      { border-left: 3px solid #404040; }
+
+.sev-text-critical   { color: #ffffff; }
+.sev-text-high       { color: #a0a0a0; }
+.sev-text-medium     { color: #606060; }
+.sev-text-low        { color: #404040; }
+
+/* ─── Recharts tooltip override (neutral only) ────────── */
+.recharts-default-tooltip {
+  background: #111111 !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 2px !important;
+  color: #ffffff !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 11px !important;
+}
+.recharts-tooltip-label { color: #a0a0a0 !important; }
+.recharts-cartesian-axis-tick-value { fill: #606060 !important; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+.recharts-cartesian-grid line { stroke: #1a1a1a; }
+
+/* ─── Leaflet popup theming ───────────────────────────── */
+.leaflet-popup-content-wrapper {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+}
+.leaflet-popup-tip { background: #000000 !important; border: 1px solid #2a2a2a !important; }
+.leaflet-popup-close-button { color: #ffffff !important; }
+.leaflet-container { background: #000000 !important; }
+.leaflet-control-attribution { background: #000000 !important; color: #606060 !important; }
+.leaflet-control-attribution a { color: #a0a0a0 !important; }
+.leaflet-bar a { background: #000000 !important; color: #ffffff !important; border-color: #2a2a2a !important; }
+.leaflet-bar a:hover { background: #141414 !important; }
+
+/* ─── React-hot-toast theme override ──────────────────── */
+div[role="status"], .go2072408551 {
+  background: #111111 !important;
+  color: #ffffff !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 2px !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 12px !important;
+}
+
+/* ─── Custom focus ring (white, sharp) ─────────────────── */
+:focus { outline: none; }
+:focus-visible { outline: 1px solid #ffffff; outline-offset: 1px; }
+
+/* ─── Disable all rounded corners above 2px globally ─── */
+* { border-radius: 0; }
+.rounded-full { border-radius: 9999px; } /* keep for circular markers only */
