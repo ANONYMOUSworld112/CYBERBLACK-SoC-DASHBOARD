@@ -1,0 +1,16 @@
+node_modules/
+dist/
+build/
+.cache/
+.DS_Store
+.env
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+logs/
+*.log
+npm-debug.log*
+.vscode/
+.idea/
+coverage/

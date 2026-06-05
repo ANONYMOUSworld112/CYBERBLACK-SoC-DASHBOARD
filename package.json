@@ -1,0 +1,41 @@
+{
+  "name": "soc-dashboard-v2",
+  "version": "2.0.0",
+  "description": "Enterprise Security Operations Center Dashboard — B&W enterprise theme",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "server": "node --watch server/index.js",
+    "client": "npm run dev --prefix client",
+    "build": "npm run build --prefix client",
+    "setup": "node setup.js",
+    "install:all": "npm install && npm install --prefix client",
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "socket.io": "^4.7.5",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.4.0",
+    "jsonwebtoken": "^9.0.2",
+    "bcrypt": "^5.1.1",
+    "otplib": "^12.0.1",
+    "qrcode": "^1.5.4",
+    "axios": "^1.7.7",
+    "cheerio": "^1.0.0",
+    "systeminformation": "^5.23.5",
+    "node-cron": "^3.0.3",
+    "dotenv": "^16.4.5",
+    "winston": "^3.14.2",
+    "whois-json": "^2.0.4",
+    "xml2js": "^0.6.2",
+    "geoip-lite": "^1.4.10",
+    "p-limit": "^3.1.0",
+    "uuid": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

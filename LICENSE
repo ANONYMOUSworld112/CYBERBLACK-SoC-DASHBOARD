@@ -1,21 +1,56 @@
-MIT License
+CYBERBLACK // SoC DASHBOARD
+Copyright (c) 2026 CYBERBLACK authors. All Rights Reserved.
 
-Copyright (c) 2026 ANONYMOUSworld112
+PROPRIETARY SOFTWARE — NOT OPEN SOURCE.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This software and associated documentation files (the "Software") are the
+confidential and proprietary information of the copyright holder
+("CYBERBLACK authors"). The Software is provided under a closed-source,
+proprietary license and is NOT licensed under any open-source license,
+including but not limited to the MIT License, Apache License 2.0, BSD
+Licenses, or the GNU General Public License.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+RESTRICTIONS:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+1. No copying, modification, merger, publication, distribution,
+   sublicensing, or sale of the Software, in whole or in part, is
+   permitted without the prior written consent of the copyright holder.
+
+2. No reverse engineering, decompilation, or disassembly of the Software
+   is permitted, except to the extent that such activity is expressly
+   permitted by applicable law notwithstanding this limitation.
+
+3. No removal or alteration of proprietary notices, labels, or marks
+   contained in or on the Software is permitted.
+
+4. The Software may not be used by any person or entity other than those
+   expressly authorized by the copyright holder under a separate written
+   agreement.
+
+5. Unauthorized access to, disclosure of, or use of the Software is
+   strictly prohibited and may result in civil and/or criminal penalties
+   under applicable laws, including but not limited to the Computer Fraud
+   and Abuse Act (18 U.S.C. § 1030), the Digital Millennium Copyright Act
+   (17 U.S.C. § 1201), and equivalent non-U.S. statutes.
+
+DISCLAIMER:
+
+THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF
+ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND
+NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR
+ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+EXPORT CONTROL:
+
+The Software may be subject to export control laws and regulations,
+including but not limited to the U.S. Export Administration Regulations
+(EAR) and the International Traffic in Arms Regulations (ITAR). You agree
+to comply with all applicable export and re-export restrictions.
+
+For licensing inquiries, contact the copyright holder through the channel
+specified in the project README.
+
+— end of notice —
