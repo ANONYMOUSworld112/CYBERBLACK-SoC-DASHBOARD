@@ -182,27 +182,27 @@ All runtime configuration lives in `.env` (auto-created by `setup.js`):
 
 1. execute
 
-![execute](./execute.png)
+![execute](docs/execute.png)
 
 2. login-page
 
-![login-page](./login-page.png)
+![login-page](docs/login-page.png)
 
 3. 2FA-page
 
-![2FA-page](./2FA-page.png)
+![2FA-page](docs/2FA-page.png)
 
 4. 2FA-OTP
 
-![2FA-OTP](./2FA-OTP.png)
+![2FA-OTP](docs/2FA-OTP.png)
 
 5. dashboard
 
-![dashboard](./dashboard.png)
+![dashboard](docs/dashboard.png)
 
 6. network
 
-![network](./network.png)
+![network](docs/network.png)
 
 ---
 
