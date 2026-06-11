@@ -209,6 +209,7 @@ Then open **http://localhost:5173** and log in with:
 ```
 username: admin
 password: ChangeMe!2026
+run this in other terminal for 2FA : node scripts/get-totp.js
 ```
 
 You'll be routed through TOTP 2FA enrollment on first login. See [`docs/QUICKSTART.md`](docs/QUICKSTART.md) for the full walkthrough and troubleshooting matrix.
