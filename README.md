@@ -3,8 +3,7 @@
 > **The enterprise Security Operations Center that refuses to look like a toy.**
 > Real-time detection. Network visibility. Open-source intelligence. Threat tools. All in a strict black-and-white operational aesthetic.
 
-```
-   ██████╗██╗   ██╗██████╗ ███████╗██████╗ ██████╗ ██╗      █████╗  ██████╗██╗  ██╗
+`` ██████╗██╗   ██╗██████╗ ███████╗██████╗ ██████╗ ██╗      █████╗  ██████╗██╗  ██╗
 ██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔══██╗██║     ██╔══██╗██╔════╝██║ ██╔╝
 ██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝██████╔╝██║     ███████║██║     █████╔╝
 ██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗██╔══██╗██║     ██╔══██║██║     ██╔═██╗
@@ -175,6 +174,34 @@ All runtime configuration lives in `.env` (auto-created by `setup.js`):
 |---|---|---|
 | **Login** — neural-network canvas background, TOTP-aware | **Dashboard** — risk gauge, KPIs, live feed | **Alerts** — severity pills, incident board |
 | **Network** — geo map + top talkers + protocol donut | **OSINT** — search bar + drawer with DNS/Whois | **Settings** — TOTP reset, password change, audit log |
+
+---
+
+## Screenshots
+
+1. execute
+
+![execute](./execute.png)
+
+2. login-page
+
+![login-page](./login-page.png)
+
+3. 2FA-page
+
+![2FA-page](./2FA-page.png)
+
+4. 2FA-OTP
+
+![2FA-OTP](./2FA-OTP.png)
+
+5. dashboard
+
+![dashboard](./dashboard.png)
+
+6. network
+
+![network](./network.png)
 
 ---
 
